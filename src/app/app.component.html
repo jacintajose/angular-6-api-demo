@@ -1,20 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1>
-    Welcome to {{ title }}!
+    Build From Zero | Demo for Jesie <3 !
   </h1>
 </div>
-<h2>Here are some Test Datas from Api: </h2>
+  <br>
 <ul *ngIf="Data">
   <li *ngFor="let item of Data.results">
     <h2>{{item.title}}</h2>
     <p><small> - {{item.writer}}</small></p>
   </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
+ 
 </ul>
 
