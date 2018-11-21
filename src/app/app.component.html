@@ -8,6 +8,8 @@
 <ul *ngIf="Data">
   <li *ngFor="let item of Data.results">
     <h2>{{item.title}}</h2>
+    <h3>{{item.id}}</h3>
+    <h4>{{item.slug}}</h4>
     <p><small> - {{item.writer}}</small></p>
   </li>
  
