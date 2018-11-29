@@ -1,17 +1,24 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 
-<div style="text-align:center">
-    <h1>
-      Build From Zero | Demo for Jesie <3 !
-    </h1>
-  </div>
-    <br>
+
+
+    <div class="container"></div>
     
 <div class="container">
     <div class="row">
       
       <div class="col-12 col-md-12">
+
+          <div style="text-align:center">
+              <br>
+              <div class="shadow-none p-3 mb-5 bg-light rounded border border-danger">
+                <h1>
+                  Build From Zero | Demo for my Jesie 
+              </h1>
+            </div>
+            </div>
+              <br>
 
           <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
@@ -30,7 +37,7 @@
                       <div class="card" *ngFor="let item of Data.results">
                           <div class="card-body">
                             <button type="button" class="btn btn-link"> <h3>{{item.title}}</h3></button>
-                              <p><small> - {{item.writer}}</small></p>
+                              <p><a href="#" class="text-danger bg-light"><small> - {{item.writer}} </small></a></p>
                           </div>
                       </div>
                     </div>
