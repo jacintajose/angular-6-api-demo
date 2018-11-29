@@ -1,27 +1,67 @@
 <!--The content below is only a placeholder and can be replaced.-->
+
+
 <div style="text-align:center">
-  <h1>
-    Build From Zero | Demo for Jesie <3 !
-  </h1>
-</div>
-  <br>
-<ul *ngIf="Data">
-  <div *ngFor="let item of Data.results">
-    <button type="button" class="btn btn-link"> <h3>{{item.title}}</h3></button>
-   
-    <h3>{{item.id}}</h3>
-    <h4>{{item.slug}}</h4>
-    <p><small> - {{item.writer}}</small></p>
+    <h1>
+      Build From Zero | Demo for Jesie <3 !
+    </h1>
   </div>
- 
-</ul>
-<ul *ngIf="Project">
-  <li *ngFor="let sample of Project.results">
-    <h2>{{sample.title}}</h2>
-    <h3>{{sample.id}}</h3>
-    <h4>{{sample.slug}}</h4>
-    <p><small> - {{sample.tags}}</small></p>
-  </li>
- 
-</ul>
+    <br>
+    
+<div class="container">
+    <div class="row">
+      
+      <div class="col-12 col-md-12">
+
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tutorials</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Blog</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+              <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                  <div *ngIf="Data">
+                      <div class="card" *ngFor="let item of Data.results">
+                          <div class="card-body">
+                            <button type="button" class="btn btn-link"> <h3>{{item.title}}</h3></button>
+                              <p><small> - {{item.writer}}</small></p>
+                          </div>
+                      </div>
+                    </div>
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                  <ol *ngIf="Project">
+                      <li *ngFor="let sample of Project.results">
+                        <h2>{{sample.title}}</h2>
+                        <p><small> - {{sample.tags}}</small></p>
+                      </li>
+                     
+                    </ol>
+              </div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+            </div>
+
+
+      
+
+      </div>
+
+
+      
+    </div>
+  </div>
+
+
+
+
+
+
+
+
 
