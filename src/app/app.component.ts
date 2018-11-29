@@ -9,9 +9,11 @@ import { DataService } from './shared/services/data.service';
 export class AppComponent {
   title = 'apiTestApp';
   Data: Object;
-
+  Project: Object
   constructor(private _dataService: DataService) {
     this.getTutorialLists();
+    this.getprojects();
+
   }
 
   getTutorialLists() {
@@ -21,5 +23,11 @@ export class AppComponent {
       this.Data = data;
     });
   }
-
+  getprojects() {
+    this._dataService.getProject()
+    .subscribe( project => {
+      console.log(project);
+      this.Project = project;
+    });
+  }
 }

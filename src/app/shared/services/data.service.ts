@@ -12,7 +12,11 @@ export class DataService {
   getData() {
     return this.http.get(this.$baseUrl + '/tutorials/api/?format=json', this.Options());
   }
+getProject()
+{
+  return this.http.get(this.$baseUrl + '/projects/api/?format=json', this.Options());
 
+}
   // httpOptions
   Options() {
     const httpOptions = {
