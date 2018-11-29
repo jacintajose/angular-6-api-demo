@@ -10,6 +10,9 @@ export class AppComponent {
   title = 'apiTestApp';
   Data: Object;
   Project: Object
+  TutorialDetail:Object
+
+
   constructor(private _dataService: DataService) {
     this.getTutorialLists();
     this.getprojects();
@@ -23,6 +26,24 @@ export class AppComponent {
       this.Data = data;
     });
   }
+
+  onClick(slug:String){
+    console.log("click event")
+    console.log(slug)
+    this.getTutorial(slug)
+  }
+
+
+  getTutorial(slug:String) {
+    this._dataService.getTutorial(slug)
+    .subscribe( data => {
+      console.log("Tutorial detail response")
+      console.log(data);
+      this.TutorialDetail = data;
+    });
+  }
+
+
   getprojects() {
     this._dataService.getProject()
     .subscribe( project => {
@@ -30,4 +51,5 @@ export class AppComponent {
       this.Project = project;
     });
   }
+
 }

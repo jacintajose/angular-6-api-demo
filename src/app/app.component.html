@@ -37,7 +37,9 @@
                   <div *ngIf="Data">
                       <div class="card" *ngFor="let item of Data.results">
                           <div class="card-body">
-                            <button type="button" class="btn btn-link"> <h3>{{item.title}}</h3></button>
+                            <button type="button" class="btn btn-link" (click)="onClick(item.slug)" data-toggle="modal" data-target=".bd-example-modal-lg"> 
+                              <h3>{{item.title}}</h3>
+                            </button>
                               <p><a href="#" class="text-danger bg-light"><small> - {{item.writer}} </small></a></p>
                           </div>
                       </div>
@@ -67,6 +69,24 @@
     </div>
   </div>
 
+
+  <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">{{TutorialDetail.title}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+              
+                    {{TutorialDetail.content}}
+              
+              </div>
+        </div>
+      </div>
+    </div>
 
 
 

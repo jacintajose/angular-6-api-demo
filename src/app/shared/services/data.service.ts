@@ -12,6 +12,13 @@ export class DataService {
   getData() {
     return this.http.get(this.$baseUrl + '/tutorials/api/?format=json', this.Options());
   }
+
+
+  getTutorial(slug:String) {
+    const url = this.$baseUrl +"/tutorials/api/" + slug + "/?format=json"
+    console.log(url)
+    return this.http.get(url, this.Options());
+  }
 getProject()
 {
   return this.http.get(this.$baseUrl + '/projects/api/?format=json', this.Options());
