@@ -17,6 +17,12 @@ getProject()
   return this.http.get(this.$baseUrl + '/projects/api/?format=json', this.Options());
 
 }
+
+getBlog()
+{
+  return this.http.get(this.$baseUrl + '/blog/api/?format=json', this.Options());
+
+}
   // httpOptions
   Options() {
     const httpOptions = {

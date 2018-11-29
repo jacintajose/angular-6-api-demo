@@ -9,10 +9,12 @@ import { DataService } from './shared/services/data.service';
 export class AppComponent {
   title = 'apiTestApp';
   Data: Object;
-  Project: Object
+  Project: Object;
+  Blog: Object;
   constructor(private _dataService: DataService) {
     this.getTutorialLists();
     this.getprojects();
+    this. getBlog();
 
   }
 
@@ -28,6 +30,14 @@ export class AppComponent {
     .subscribe( project => {
       console.log(project);
       this.Project = project;
+    });
+  }
+
+  getBlog() {
+    this._dataService.getBlog()
+    .subscribe( blog => {
+      console.log(blog);
+      this.Blog = blog;
     });
   }
 }

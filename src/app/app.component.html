@@ -1,8 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Build From Zero | Demo for Jesie <3 !
-  </h1>
+
+    <div class="alert alert-dark" role="alert">
+        <h1>
+            Build From Zero | Demo for Jesie <3 !
+          </h1>      </div>
+
 </div>
   <br>
 
@@ -37,16 +40,37 @@
               </div>
               <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                   <ol *ngIf="Project">
-                      <li *ngFor="let sample of Project.results">
-                        <h2>{{sample.title}}</h2>
-                        <h3>{{sample.id}}</h3>
-                        <h4>{{sample.slug}}</h4>
-                        <p><small> - {{sample.tags}}</small></p>
+                      <li *ngFor="let sample of Project.results" class="card">
+                          <div class="card-body">
+
+                              <div class="alert alert-primary" role="alert">
+                                  <h2>{{sample.title}}</h2>
+                                </div>
+                                <div class="alert alert-secondary" role="alert">
+                                    <h3> {{sample.tags}}</h3>
+                                  </div>
+                                <div class="alert alert-success" role="alert">
+                                    <h4>{{sample.slug}}</h4>
+                                  </div>
+                                <div class="alert alert-danger" role="alert">
+                                    <p><small> -{{sample.id}} </small></p>                                    </div>
+                                   
+                          </div>
                       </li>
                      
                     </ol>  
               </div>
-              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
+              <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                  <ul *ngIf="Data">
+                      <div *ngFor="let test of Blog.results" class="card">
+                        <div class="card-body">
+                        <button type="button" class="btn btn-warning btn-lg btn-block"> <h3>{{test.title}}</h3></button>
+                        <button type="button" class="btn btn-dark btn-lg btn-block">{{test.writer}}</button>
+
+                      </div>
+                      </div>
+                    </ul> 
+              </div>
             </div>
 
 
